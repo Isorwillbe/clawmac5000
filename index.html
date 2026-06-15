@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHORE CLAW 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Screen flicker overlay -->
+  <div class="flicker"></div>
+
+  <div id="app">
+
+    <!-- Header -->
+    <header>
+      <div class="header-pixels">
+        <span class="pixel-star">★</span>
+        <span class="pixel-star">★</span>
+        <span class="pixel-star">★</span>
+      </div>
+      <h1 class="title">
+        <span class="title-line1">🕹️ CHORE CLAW</span>
+        <span class="title-line2">3000</span>
+      </h1>
+      <p class="subtitle">INSERT COIN TO PICK YOUR DOOM</p>
+      <div class="coin-counter">
+        <span class="coin-label">COINS:</span>
+        <span id="coins">3</span>
+        <span class="coin-icon">🪙</span>
+      </div>
+    </header>
+
+    <!-- Main game area -->
+    <main class="game-area">
+
+      <!-- Claw Machine Cabinet -->
+      <div class="cabinet" id="cabinet">
+
+        <!-- Machine top decoration -->
+        <div class="machine-top">
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+          <div class="bulb"></div>
+        </div>
+
+        <!-- Machine glass window -->
+        <div class="glass-window" id="glassWindow">
+
+          <!-- Rail track at top -->
+          <div class="rail-track">
+            <div class="rail-line"></div>
+          </div>
+
+          <!-- Claw assembly -->
+          <div class="claw-assembly" id="clawAssembly">
+            <div class="claw-wire" id="clawWire"></div>
+            <div class="claw-head" id="clawHead">
+              <div class="claw-arm claw-arm-left" id="clawLeft"></div>
+              <div class="claw-arm claw-arm-right" id="clawRight"></div>
+            </div>
+          </div>
+
+          <!-- Prizes container -->
+          <div class="prizes-container" id="prizesContainer">
+            <!-- Prizes will be injected by JS -->
+          </div>
+
+          <!-- Prize chute -->
+          <div class="prize-chute">
+            <div class="chute-opening"></div>
+          </div>
+
+        </div>
+
+        <!-- Machine bottom panel -->
+        <div class="machine-bottom">
+          <div class="control-panel">
+            <div class="joystick-base">
+              <div class="joystick-stick" id="joystickStick"></div>
+            </div>
+            <div class="button-panel">
+              <button class="action-btn" id="moveLeftBtn">◀</button>
+              <button class="action-btn" id="moveRightBtn">▶</button>
+              <button class="drop-btn" id="dropBtn">DROP CLAW</button>
+            </div>
+          </div>
+          <div class="prize-window" id="prizeWindow">
+            <span class="prize-window-label">WIN SLOT</span>
+            <div class="prize-display" id="prizeDisplay"></div>
+          </div>
+        </div>
+
+      </div><!-- end cabinet -->
+
+      <!-- Side panel: Chore List -->
+      <aside class="chore-panel">
+        <div class="panel-header">
+          <span class="panel-icon">📋</span>
+          <h2>CHORE QUEUE</h2>
+        </div>
+
+        <div class="chore-list" id="choreList">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="completed-section">
+          <div class="panel-header">
+            <span class="panel-icon">✅</span>
+            <h2>DONE!</h2>
+          </div>
+          <div class="completed-list" id="completedList">
+            <p class="empty-msg">Nothing yet... get to work!</p>
+          </div>
+        </div>
+
+        <div class="score-board">
+          <div class="score-item">
+            <span class="score-label">XP</span>
+            <span id="xpScore">0</span>
+          </div>
+          <div class="score-item">
+            <span class="score-label">STREAK</span>
+            <span id="streakScore">0</span>🔥
+          </div>
+          <div class="score-item">
+            <span class="score-label">RANK</span>
+            <span id="rankLabel">ROOKIE</span>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- Message overlay -->
+    <div class="message-overlay" id="messageOverlay" style="display:none;">
+      <div class="message-box" id="messageBox">
+        <div class="message-pixels"></div>
+        <p id="messageText"></p>
+        <button class="msg-btn" id="msgBtn">OK!</button>
+      </div>
+    </div>
+
+    <!-- Celebration particles -->
+    <div id="particles"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>🕹️ CHORE CLAW 3000 &nbsp;|&nbsp; QUARTERS ACCEPTED &nbsp;|&nbsp; NO REFUNDS</p>
+    </footer>
+
+  </div><!-- end app -->
+
+  <script src="game.js"></script>
+</body>
+</html>
