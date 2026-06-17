@@ -529,7 +529,7 @@ function pickTarget() {
 // ─── MISS DETECTION ───────────────────────────────────────────────────────────
 // If the closest ball to the claw tip (in X) is farther than this threshold,
 // the claw misses entirely.
-const MISS_THRESHOLD = 90; // px — wider than a ball diameter, but you really need to aim
+const MISS_THRESHOLD = 30; // px — tight! you gotta actually aim
 
 function getClosestBallDistance() {
   const clawCenter = state.clawX + 20;
